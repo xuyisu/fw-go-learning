@@ -1,0 +1,9 @@
+{
+  "orderNo":"27017",
+  "orderDetail":{
+    "orderId":"1010203035363231",
+    "receiveName":"测试",
+    "receiveMobile":"12345678910",
+    "receiveAddr":"安徽省XXX市"
+  }
+}

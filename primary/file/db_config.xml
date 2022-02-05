@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <dbIp>127.0.0.1</dbIp>
+    <dbPost>3306</dbPost>
+    <userName>root</userName>
+    <pwd>123456</pwd>
+    <online flag="true">
+        <description>127.0.0.1</description>
+        <description>127.0.0.2</description>
+        <description>127.0.0.3</description>
+    </online>
+</config>

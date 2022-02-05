@@ -1,0 +1,9 @@
+Hello插入一个gogo
+Hello Go:1
+i love go
+Hello Go:2
+i love go
+Hello Go:3
+i love go
+Hello Go:4
+i love go

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板使用示例</title>
+</head>
+<body>
+   <p>你好 {{ .userName }} </p>
+   <p>你的年龄 {{ .age }} {{if .man}} ,你已经是一个成年人了 {{else}} ,你还未成年 {{end}} </p>
+   <p>你最近在 {{ .addr }} </p>
+   你熟悉的技术:
+   {{template "template_ul.tmpl" .}}
+</body>
+</html>
