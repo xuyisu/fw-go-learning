@@ -1,8 +1,9 @@
 # go 学习之路
 
-从hello world  开始
+从hello world  开始到了解常用的框架，最终可以自己轻松用Go 写项目，来试试吧
 
-**涉及的内容包含如下表格**
+
+### 涉及的内容包含如下表格
 | 模板   | 功能点         | 状态 |
 | ------ | -------------- | -------- |
 | 基础   | 基础语法       | 完成   |
@@ -32,8 +33,27 @@
 | 实战   | BeeGo 框架-vue |  完成   |
 | 实战   | 微服务  | 计划中   |
 
+### 项目运行环境
+
+| go          | 1.15+   |
+| ------------ | ------ |
+| mysql        | 5.7+   |
+| redis        | 6.2.1  |
+| mongodb        | latest  |
+
 
 ### 阅读地址
-[fw-go-learning](https://www.kancloud.cn/xuyisu/goweb/2635897)
+[阅读地址](https://www.kancloud.cn/xuyisu/goweb/2635897)
+
+
+### 代码运行
+```go
+git clonne https://github.com/xuyisu/fw-go-learning.git  或 https://gitee.com/gitxys/fw-go-learning.git
+
+cd fw-go-learning 
+
+go mod download
+```
+
 
 **star一下,支持一下作者**
