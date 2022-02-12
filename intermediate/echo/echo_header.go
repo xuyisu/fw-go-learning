@@ -16,7 +16,7 @@ func main() {
 
 		var res = make(map[string]string)
 		res["message"] = "success"
-		c.Request().Header.Set("fw", "go header")
+		c.Response().Header().Set("fw", "go header")
 		return c.JSON(http.StatusOK, res)
 	})
 

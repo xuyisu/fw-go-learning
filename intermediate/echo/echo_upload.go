@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"io"
 	"net/http"
 	"os"
@@ -13,6 +14,8 @@ import (
 func main() {
 	//实例化echo对象。
 	e := echo.New()
+	//输出日志
+	e.Use(middleware.Logger())
 	//注册一个Get请求, 路由地址为: /hello  并且绑定一个控制器函数, 这里使用的是闭包函数。
 	e.GET("/upload", func(c echo.Context) error {
 

@@ -12,7 +12,7 @@ func main() {
 	e.GET("/hello", func(c echo.Context) error {
 
 		var res = make(map[string]string)
-		res["message"] = "hello echo"
+		res["message"] = "hello world!"
 		return c.JSON(http.StatusOK, res)
 	})
 
