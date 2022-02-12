@@ -8,15 +8,16 @@ import (
 func main() {
 
 	app := iris.New()
+	app.Logger().SetLevel("debug")
 	app.Use(logger.New())
-	//设置cookie
-	app.Post("/header", func(ctx iris.Context) {
-		ctx.Header("fw", "go Header")
+	//设置header
+	app.Get("/header", func(ctx iris.Context) {
+		ctx.Header("fw", "go header")
 
 		ctx.JSON(iris.Map{"message": "success"})
 	})
-	//设置cookie
-	app.Post("/getHeader", func(ctx iris.Context) {
+	//获取header
+	app.Get("/getHeader", func(ctx iris.Context) {
 
 		header := ctx.GetHeader("fw")
 		ctx.JSON(iris.Map{"message": header})

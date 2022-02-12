@@ -8,15 +8,16 @@ import (
 func main() {
 
 	app := iris.New()
+	app.Logger().SetLevel("debug")
 	app.Use(logger.New())
 	//设置cookie
-	app.Post("/cookie", func(ctx iris.Context) {
+	app.Get("/cookie", func(ctx iris.Context) {
 		ctx.SetCookieKV("fw", "hello go")
 
 		ctx.JSON(iris.Map{"message": "success"})
 	})
-	//设置cookie
-	app.Post("/getCookie", func(ctx iris.Context) {
+	//获取cookie
+	app.Get("/getCookie", func(ctx iris.Context) {
 
 		cookie := ctx.GetCookie("fw")
 		ctx.JSON(iris.Map{"message": cookie})

@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/middleware/logger"
 	"github.com/kataras/iris/v12/sessions"
 	"github.com/kataras/iris/v12/sessions/sessiondb/redis"
 )
@@ -52,7 +53,8 @@ func main() {
 	database := redis.New(config)
 	redisSession.UseDatabase(database)
 	app := iris.New()
-
+	app.Logger().SetLevel("debug")
+	app.Use(logger.New())
 	app.Get("/info", infoRedis)
 	app.Get("/login", loginRedis)
 	app.Get("/logout", logoutRedis)

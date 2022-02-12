@@ -14,6 +14,7 @@ const maxSize = 5 << 20 // 5MB
 func main() {
 
 	app := iris.New()
+	app.Logger().SetLevel("debug")
 	app.Use(logger.New())
 	app.Post("/upload", iris.LimitRequestBodySize(maxSize+1<<20), func(ctx iris.Context) {
 		// Get the file from the request.
@@ -39,6 +40,8 @@ func main() {
 		defer out.Close()
 
 		io.Copy(out, file)
+
+		ctx.JSON(iris.Map{"message": "upload success"})
 	})
 	app.Run(iris.Addr(":8080"), iris.WithoutServerError(iris.ErrServerClosed))
 }

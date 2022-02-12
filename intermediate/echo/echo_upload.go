@@ -17,7 +17,7 @@ func main() {
 	//输出日志
 	e.Use(middleware.Logger())
 	//注册一个Get请求, 路由地址为: /hello  并且绑定一个控制器函数, 这里使用的是闭包函数。
-	e.GET("/upload", func(c echo.Context) error {
+	e.POST("/upload", func(c echo.Context) error {
 
 		var res = make(map[string]string)
 		file, err := c.FormFile("file")

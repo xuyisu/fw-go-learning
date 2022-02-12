@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/middleware/logger"
 	"github.com/kataras/iris/v12/sessions"
 )
 
@@ -23,7 +24,7 @@ func info(ctx iris.Context) {
 func login(ctx iris.Context) {
 	session := sess.Start(ctx)
 
-	session.Set("authennticated", "211211651656156151")
+	session.Set("authennticated", "1234564564564564564")
 
 	ctx.JSON(iris.Map{"message": "用户登录"})
 }
@@ -37,7 +38,8 @@ func logout(ctx iris.Context) {
 
 func main() {
 	app := iris.New()
-
+	app.Logger().SetLevel("debug")
+	app.Use(logger.New())
 	app.Get("/info", info)
 	app.Get("/login", login)
 	app.Get("/logout", logout)
